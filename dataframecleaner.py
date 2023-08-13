@@ -18,3 +18,7 @@ def convert_to_float(df, col_name):
     df[col_name] = df[col_name].str.replace('.', '')
     df[col_name] = df[col_name].str.replace(',', '.').astype(float)
     return df
+
+
+
+def drop_NGRs(df, NGRs)

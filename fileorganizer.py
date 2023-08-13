@@ -154,5 +154,4 @@ class FileOrganizer:
                
                 return True
                
-        #File 1 = parameters json 
-        #File 2 = antena json
+      
