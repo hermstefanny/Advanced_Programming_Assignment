@@ -1,2 +1,7 @@
 .ipynb_checkpoints
 __pycache__
+.venv/
+saved_antenna.json
+saved_parameter.json
+complete_selected_radio_data.json
+.idea/
