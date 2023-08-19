@@ -67,14 +67,16 @@ class FileOrganizer:
                                         '300','310','320','330','340','350','Lat','Long'
                                         ]
     
-
+         ###------------------------###I HAVE TO CHANGE THIS CPLUMNS NAMES TO THE REAL ONES THAT MY PROGRAM IS PRODUCING--------------########
         self.valid_json_File1_cols = ['ID', 'Date', 'Ensemble ID ', 'Transmitter Area', 
                                 'Site', 'Frequency', 'Block', 
-                                'TII Main ID', 'TII Sub ID']
+                                'TII Main ID', 'TII Sub ID']   #I HAVE TO CHANGE THIS CPLUMNS NAMES TO THE REAL ONES THAT MY PROGRAM IS PRODUCING##
 
         #valid_json_File1_cols =['ID','Ensemble','Licence','Ensemble Area', 'EID', 
                             #'Transmitter Area', 'Site' 'Frequency', 'Services', 
                             # 'Data Services']
+                 
+        ####---------------------I HAVE TO CHANGE THIS CPLUMNS NAMES TO THE REAL ONES THAT MY PROGRAM IS PRODUCING------------------------------########
 
         self.valid_json_File2_cols = ['ID','NGR','Longitude/Latitude',
                             'Site Height','In-Use Ae Ht', 
@@ -90,7 +92,6 @@ class FileOrganizer:
     def file_processer(self):
         if self.type =='JSON':
             json_file = self.json_opener()
-            print(f'El archivo es {self.validate_json_file(json_file)}')
             if self.validate_json_file(json_file):
                 self.message =f'{self.file_key} has been uploaded as a {self.type} type file'
                 return json_file
@@ -99,7 +100,6 @@ class FileOrganizer:
             
         elif self.type == 'CSV':
             csv_file = self.csv_opener()
-            print(f'El archivo es {self.validate_csv_file(csv_file)}')
             if self.validate_csv_file(csv_file):
                 self.message =f'{self.file_key} has been uploaded as a {self.type} type file'
                 return csv_file
@@ -128,10 +128,8 @@ class FileOrganizer:
         valid_column_headers =[]
         if self.file_key == 'ParametersDAB':
             valid_column_headers = self.valid_csv_File1_cols
-        
         elif self.file_key == 'AntennaDAB':
             valid_column_headers = self.valid_csv_File2_cols
-
         if not all(col in csv_file.columns for col in valid_column_headers):
             return False
         else:
@@ -153,5 +151,5 @@ class FileOrganizer:
             else:
                
                 return True
+            
                
-      
